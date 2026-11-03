@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Yessine Zghab — Web Developer focused on modern websites, digital experiences and practical technology solutions.">
+  <meta name="theme-color" content="#080d1a">
+  <meta property="og:title" content="Yessine Zghab | Web Developer">
+  <meta property="og:description" content="Explore my projects, skills and contact information.">
+  <meta property="og:type" content="website">
+  <title>Yessine Zghab | Web Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:#080d1a; --surface:#101a2e; --surface2:#14213a; --text:#edf3ff;
+      --muted:#a0aec8; --line:#263653; --accent:#69a4ff; --accent2:#8bcbff;
+      --shadow:0 24px 70px rgba(0,0,0,.24); --header:rgba(8,13,26,.84);
+    }
+    [data-theme="light"] {
+      --bg:#f5f7fc; --surface:#fff; --surface2:#edf2fa; --text:#111a2b;
+      --muted:#53627c; --line:#d9e1ef; --accent:#245edb; --accent2:#245edb;
+      --shadow:0 24px 70px rgba(31,55,92,.10); --header:rgba(245,247,252,.88);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:90px}
+    body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 "DM Sans",sans-serif;overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(650px 420px at 85% 0%,rgba(73,137,255,.13),transparent 70%),radial-gradient(500px 360px at 0% 45%,rgba(55,105,190,.08),transparent 70%)}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    .container{width:min(1120px,calc(100% - 40px));margin:auto}
+    .topbar{position:sticky;top:0;z-index:20;background:var(--header);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);transition:transform .3s ease}
+    .topbar.hide{transform:translateY(-100%)}
+    nav{height:76px;display:flex;align-items:center;gap:24px}
+    .brand{font:700 22px "Space Grotesk";letter-spacing:-1px;margin-right:auto}
+    .brand span,.accent{color:var(--accent)}
+    .navlinks{display:flex;align-items:center;gap:7px;list-style:none;margin:0;padding:0}
+    .navlinks a{display:block;padding:9px 12px;border-radius:9px;color:var(--muted);font-size:14px}
+    .navlinks a:hover{color:var(--text);background:var(--surface2)}
+    .actions{display:flex;gap:9px;align-items:center}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 18px;border:1px solid var(--line);border-radius:10px;background:transparent;color:var(--text);font-weight:700;font-size:14px;cursor:pointer;transition:.2s}
+    .btn:hover{transform:translateY(-2px);border-color:var(--accent)}
+    .btn.primary{background:var(--accent);border-color:var(--accent);color:white}
+    .btn.primary:hover{filter:brightness(1.08);box-shadow:0 10px 30px rgba(70,130,240,.22)}
+    .btn.small{padding:9px 12px}
+    .iconbtn{width:42px;height:42px;padding:0;font-size:18px}
+    .menu{display:none}
+    section{padding:94px 0}
+    .hero{padding:92px 0 80px}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:55px;align-items:center}
+    .eyebrow{font:500 12px "DM Mono",monospace;letter-spacing:2px;text-transform:uppercase;color:var(--accent2);margin-bottom:17px}
+    h1,h2,h3{font-family:"Space Grotesk",sans-serif;line-height:1.12;letter-spacing:-1.2px;margin:0}
+    h1{font-size:clamp(42px,6vw,72px);max-width:700px}
+    h2{font-size:clamp(30px,4vw,44px);margin-bottom:24px}
+    h3{font-size:21px}
+    .hero p{font-size:18px;color:var(--muted);max-width:610px;margin:23px 0 28px}
+    .buttonrow{display:flex;flex-wrap:wrap;gap:11px}
+    .terminal{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--surface);box-shadow:var(--shadow);transform:rotate(1deg)}
+    .terminal-head{display:flex;align-items:center;gap:7px;padding:14px 17px;border-bottom:1px solid var(--line);font:12px "DM Mono";color:var(--muted)}
+    .dot{width:9px;height:9px;border-radius:50%;background:#53627c}
+    .terminal pre{padding:22px;margin:0;overflow:auto;font:13px/2 "DM Mono",monospace;color:var(--text)}
+    .code-blue{color:var(--accent2)}.code-green{color:#69d5a5}.code-muted{color:var(--muted)}
+    .section-head{max-width:650px;margin-bottom:35px}
+    .section-head p,.muted{color:var(--muted)}
+    .about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:45px;align-items:center}
+    .about-copy p{color:var(--muted);margin:0 0 16px}
+    .facts{display:grid;gap:12px}
+    .fact{display:flex;justify-content:space-between;gap:15px;padding:15px 17px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+    .fact span{color:var(--muted)}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{padding:23px;border:1px solid var(--line);border-radius:16px;background:var(--surface);transition:.22s}
+    .card:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:var(--shadow)}
+    .card p{color:var(--muted);font-size:14px;margin:12px 0 0}
+    .card-icon{width:43px;height:43px;display:grid;place-items:center;border-radius:12px;background:var(--surface2);color:var(--accent2);font-size:20px;margin-bottom:17px}
+    .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:17px}
+    .tag{padding:5px 10px;border:1px solid var(--line);border-radius:99px;background:var(--surface2);font:11px "DM Mono";color:var(--muted)}
+    .project{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:19px;overflow:hidden;background:var(--surface);box-shadow:var(--shadow)}
+    .project-visual{min-height:330px;padding:28px;display:grid;place-items:center;background:linear-gradient(135deg,var(--surface2),var(--surface));border-right:1px solid var(--line)}
+    .browser{width:100%;max-width:440px;border:1px solid var(--line);border-radius:12px;background:var(--bg);overflow:hidden}
+    .browser-top{height:35px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:6px;padding:0 12px}
+    .browser-top i{width:7px;height:7px;border-radius:50%;background:var(--muted);opacity:.6}
+    .browser-body{padding:18px}
+    .fake-title{height:13px;width:62%;border-radius:5px;background:var(--accent);opacity:.75;margin-bottom:15px}
+    .fake-line{height:7px;width:90%;border-radius:5px;background:var(--line);margin:9px 0}
+    .fake-line.short{width:57%}
+    .fake-blocks{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:20px}
+    .fake-blocks span{height:65px;border-radius:7px;background:var(--surface2);border:1px solid var(--line)}
+    .project-info{padding:35px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+    .pill{font:11px "DM Mono";color:var(--accent2);border:1px solid var(--accent);padding:5px 10px;border-radius:99px;margin-bottom:16px}
+    .project-info p{color:var(--muted);margin:14px 0 20px}
+    .contact-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .contact-item{padding:18px;border:1px solid var(--line);border-radius:12px;background:var(--surface);min-width:0}
+    .contact-item small{display:block;color:var(--muted);font:11px "DM Mono";margin-bottom:5px}
+    .contact-item a{overflow-wrap:anywhere}
+    .contact-item a:hover{color:var(--accent2)}
+    .reveal{opacity:0;transform:translateY(18px);transition:.65s}
+    .reveal.visible{opacity:1;transform:none}
+    @media(max-width:850px){
+      .hero-grid,.about-grid,.project{grid-template-columns:1fr}
+      .terminal{transform:none}.project-visual{border-right:0;border-bottom:1px solid var(--line);min-height:250px}
+      .cards{grid-template-columns:repeat(2,1fr)}
+      section{padding:70px 0}.hero{padding-top:65px}
+      .menu{display:inline-flex}.navlinks{display:none;position:absolute;top:75px;left:0;right:0;padding:12px 20px 18px;background:var(--bg);border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch}
+      .navlinks.open{display:flex}.navlinks a{padding:12px}
+    }
+    @media(max-width:560px){
+      .container{width:min(100% - 30px,1120px)}
+      .cards,.contact-list{grid-template-columns:1fr}
+      .hero p{font-size:16px}.project-info{padding:25px}
+      section{padding:60px 0}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}.reveal{opacity:1;transform:none}}
+  </style>
+</head>
+<body>
+  <!-- EDIT YOUR DETAILS IN THE CONFIG OBJECT AT THE BOTTOM OF THIS FILE -->
+  <header class="topbar">
+    <div class="container">
+      <nav aria-label="Main navigation">
+        <a class="brand" href="#home">yessine <span>.</span> zghab</a>
+        <ul class="navlinks" id="navlinks">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="actions">
+          <button class="btn iconbtn" id="themeBtn" aria-label="Switch theme" title="Switch theme">◐</button>
+          <button class="btn iconbtn menu" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <div class="eyebrow">Web Development · Technology · Digital Solutions</div>
+          <h1>I build digital experiences with <span class="accent">code</span> and creativity.</h1>
+          <p>Hi, I'm <strong>Yessine Zghab</strong>, a web developer from Tunisia focused on creating modern, responsive and user-friendly websites. I combine technical skills, creativity and practical problem-solving to turn ideas into digital experiences.</p>
+          <div class="buttonrow">
+            <a class="btn primary" href="#projects">Explore my work ↗</a>
+            <a class="btn" href="#contact">Get in touch</a>
+          </div>
+        </div>
+        <div class="terminal reveal" aria-label="Developer profile code sample">
+          <div class="terminal-head"><i class="dot"></i><i class="dot"></i><i class="dot"></i><span style="margin-left:8px">yessine / profile.js</span></div>
+          <pre><span class="code-blue">const</span> developer = {
+  name: <span class="code-green">"Yessine Zghab"</span>,
+  role: <span class="code-green">"Web Developer"</span>,
+  location: <span class="code-green">"Tunisia"</span>,
+  skills: [
+    <span class="code-green">"HTML"</span>, <span class="code-green">"CSS"</span>,
+    <span class="code-green">"JavaScript"</span>, <span class="code-green">"Python"</span>,
+    <span class="code-green">"SQL"</span>
+  ],
+  mindset: <span class="code-green">"Build. Improve. Create."</span>
+};
+<span class="code-muted">// Turning ideas into reality.</span></pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about-grid">
+        <div class="about-copy reveal">
+          <div class="eyebrow">01 — About me</div>
+          <h2>Turning ideas into useful digital experiences.</h2>
+          <p>I'm passionate about technology, web development and creating digital solutions that are both practical and visually engaging. I enjoy taking an idea, understanding the problem behind it and shaping it into a clear, functional experience.</p>
+          <p>I value clean work, attention to detail and making technology easier for people to use.</p>
+          <p>I'm continuously expanding my knowledge through hands-on projects and practical challenges, with a focus on web development, programming and data.</p>
+        </div>
+        <div class="facts reveal">
+          <div class="fact"><span>Location</span><strong>Tunisia</strong></div>
+          <div class="fact"><span>Focus</span><strong>Web Development</strong></div>
+          <div class="fact"><span>Languages</span><strong>Arabic · English · Français</strong></div>
+          <div class="fact"><span>Interests</span><strong>Web · Python · SQL · Data</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">02 — Skills</div>
+          <h2>Tools I work with.</h2>
+          <p class="muted">A practical toolkit for building websites, writing code and solving technical problems.</p>
+        </div>
+        <div class="cards">
+          <article class="card reveal"><div class="card-icon">⌘</div><h3>Frontend Development</h3><p>Building structured, responsive and accessible web interfaces.</p><div class="tags"><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript</span><span class="tag">Responsive Design</span></div></article>
+          <article class="card reveal"><div class="card-icon">⌁</div><h3>Programming & Data</h3><p>Working with programming fundamentals, data and databases.</p><div class="tags"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Problem Solving</span></div></article>
+          <article class="card reveal"><div class="card-icon">⚙</div><h3>Technical Skills</h3><p>Diagnosing technical issues and finding practical solutions.</p><div class="tags"><span class="tag">Troubleshooting</span><span class="tag">IT Support</span><span class="tag">Communication</span></div></article>
+          <article class="card reveal"><div class="card-icon">✦</div><h3>Design & Creativity</h3><p>Paying attention to layout, clarity and the visual quality of digital work.</p><div class="tags"><span class="tag">Visual Design</span><span class="tag">UI Basics</span><span class="tag">Attention to Detail</span></div></article>
+          <article class="card reveal"><div class="card-icon">▤</div><h3>Tools & Workflow</h3><p>Organizing work and building a reliable development workflow.</p><div class="tags"><span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">VS Code</span></div></article>
+          <article class="card reveal"><div class="card-icon">◎</div><h3>Professional Skills</h3><p>Working constructively, communicating clearly and approaching challenges methodically.</p><div class="tags"><span class="tag">Teamwork</span><span class="tag">Adaptability</span><span class="tag">Analytical Thinking</span></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">03 — Selected work</div>
+          <h2>Projects & experiments.</h2>
+          <p class="muted">A selection of digital work that demonstrates my approach, interests and practical skills.</p>
+        </div>
+        <article class="project reveal">
+          <div class="project-visual">
+            <div class="browser" aria-label="Decorative project preview">
+              <div class="browser-top"><i></i><i></i><i></i></div>
+              <div class="browser-body"><div class="fake-title"></div><div class="fake-line"></div><div class="fake-line short"></div><div class="fake-blocks"><span></span><span></span><span></span></div></div>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="pill">FEATURED PROJECT · LIVE</span>
+            <h3>ISMIS — Semester 1</h3>
+            <p>A web project created as part of my practical work. It brings together a clear interface and structured content in a live website.</p>
+            <div class="tags"><span class="tag">Web Project</span><span class="tag">Live Website</span></div>
+            <div class="buttonrow" style="margin-top:22px">
+              <a class="btn primary" href="https://ismis-semestre-1.netlify.app/" target="_blank" rel="noopener noreferrer">View live project ↗</a>
+            </div>
+          </div>
+        </article>
+        <p class="muted" style="font-size:13px;margin-top:15px">Add screenshots, source-code links and more projects as they become available.</p>
+      </div>
+    </section>
+
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">04 — Contact</div>
+          <h2>Contact information.</h2>
+          <p class="muted">Get in touch by email, phone or through my professional profiles.</p>
+        </div>
+        <div class="contact-list reveal">
+          <div class="contact-item"><small>EMAIL</small><a id="emailText" href="mailto:yessinecss45@gmail.com">yessinecss45@gmail.com</a></div>
+          <div class="contact-item"><small>PHONE</small><a id="phoneText" href="tel:+21627914410">+216 27 914 410</a></div>
+          <div class="contact-item"><small>GITHUB</small><a id="githubText" href="#" target="_blank" rel="noopener">Add GitHub profile</a></div>
+          <div class="contact-item"><small>LINKEDIN</small><a id="linkedinText" href="#" target="_blank" rel="noopener">Add LinkedIn profile</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    /* =========================
+       PERSONAL DETAILS — EDIT HERE
+       ========================= */
+    const CONFIG = {
+      email: "yessinecss45@gmail.com",
+      phone: "+21627914410",
+      phoneDisplay: "+216 27 914 410",
+      github: "https://github.com/yessine-zghab",       // Example: https://github.com/yourusername
+      linkedin: ""     // Example: https://linkedin.com/in/yourusername
+    };
+
+    // Contact details
+    const emailLink = "mailto:" + CONFIG.email;
+    const phoneLink = "tel:" + CONFIG.phone;
+    document.getElementById("emailText").textContent = CONFIG.email;
+    document.getElementById("emailText").href = emailLink;
+    document.getElementById("phoneText").textContent = CONFIG.phoneDisplay;
+    document.getElementById("phoneText").href = phoneLink;
+
+    function setSocial(id, url, label) {
+      const el = document.getElementById(id);
+      if (url) {
+        el.href = url;
+        el.textContent = label;
+      } else {
+        el.removeAttribute("href");
+        el.textContent = "Add your " + label + " link in CONFIG";
+        el.style.color = "var(--muted)";
+      }
+    }
+    setSocial("githubText", CONFIG.github, "GitHub profile");
+    setSocial("linkedinText", CONFIG.linkedin, "LinkedIn profile");
+
+    // Theme toggle
+    const themeButton = document.getElementById("themeBtn");
+    const savedTheme = localStorage.getItem("portfolio-theme");
+    if (savedTheme) document.documentElement.dataset.theme = savedTheme;
+    themeButton.addEventListener("click", () => {
+      const current = document.documentElement.dataset.theme || "dark";
+      const next = current === "dark" ? "light" : "dark";
+      document.documentElement.dataset.theme = next;
+      localStorage.setItem("portfolio-theme", next);
+    });
+
+    // Mobile navigation
+    const menuButton = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navlinks");
+    menuButton.addEventListener("click", () => {
+      const opened = navLinks.classList.toggle("open");
+      menuButton.setAttribute("aria-expanded", String(opened));
+    });
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    // Hide header on scroll down, show on scroll up
+    const topbar = document.querySelector(".topbar");
+    let lastScroll = 0;
+    window.addEventListener("scroll", () => {
+      const y = window.scrollY;
+      if (y > lastScroll && y > 100 && !navLinks.classList.contains("open")) {
+        topbar.classList.add("hide");
+      } else if (y < lastScroll) {
+        topbar.classList.remove("hide");
+      }
+      lastScroll = Math.max(y, 0);
+    }, { passive: true });
+
+    // Reveal elements on scroll
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+    } else {
+      document.querySelectorAll(".reveal").forEach(el => el.classList.add("visible"));
+    }
+  </script>
+</body>
+</html>
